@@ -1,0 +1,47 @@
+@use './utilities' as *;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: getColor(8);
+}
+
+#weather-viewer {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(getColor(2), getColor(1));
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 5fr;
+    grid-template-areas:
+    "title"
+    "map"
+    "data";
+
+    @include small {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 5fr;
+        grid-template-areas:
+        "title title"
+        "map    data";
+    }
+
+    .web-title {
+        grid-area: title;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .map-visualizer {
+        grid-area: map;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .data-visualizer {
+        grid-area: data;
+        justify-self: center;
+        align-self: center;
+    }
+}

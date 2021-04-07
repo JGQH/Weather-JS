@@ -1,0 +1,13 @@
+/* Palette "Winter Wonderland Palette", recovered from "https://lospec.com/palette-list/winter-wonderland" */
+@use "sass:list";
+$colors: #ffffff, #d6e1e9, #a7bcc9, #738d9d, #8bcadd, #3875a1, #2c4a78, #20284e;
+
+@function getColor($i) {
+    @return list.nth($colors, $i);
+}
+
+@mixin small {
+    @media only screen and (min-width: 600px){
+        @content;
+    }
+}
