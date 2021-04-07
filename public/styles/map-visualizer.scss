@@ -1,0 +1,10 @@
+@use './utilities' as *;
+
+.map-visualizer {
+    padding: 2em;
+    canvas {
+        width: 100%;
+        height: auto;
+        border: 2px solid getColor(1);
+    }
+}

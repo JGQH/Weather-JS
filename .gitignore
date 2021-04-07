@@ -2,6 +2,7 @@
 
 *.css
 *.css.map
+/src/Resources/
 # dependencies
 /node_modules
 /.pnp

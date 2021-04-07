@@ -1,11 +1,13 @@
+import Map from './Components/Map';
+
 function App() {
   return (
   <>
     <div className="web-title">
-      <h1>Web Title</h1>
+      <h1>World Weather!</h1>
     </div>
     <div className="map-visualizer">
-      Map Visualizer
+      <Map />
     </div>
     <div className="data-visualizer">
       Data Visualizer
