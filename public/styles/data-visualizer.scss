@@ -2,14 +2,11 @@
 
 .data-visualizer {
     display: grid;
-    grid-template-areas:
-    "data data";
 
     .data-coordinates {
-        grid-area: data;
-
-        padding: 1em;
-        border-radius: 1em;
+        padding: .5em;
+        margin: .5em;
+        border-radius: .5em;
         background: getColor(3);
 
         .coordinates {
@@ -21,6 +18,32 @@
                 background: getColor(4);
                 padding: .5em;
                 border-radius: .5em;
+            }
+        }
+    }
+
+    .data-searcher {
+        text-align: center;
+
+        button {
+            padding: 1em;
+            border-radius: 1em;
+            border: 2px solid getColor(4);
+            color: getColor(2);
+            background: getColor(7);
+            transition: background .25s linear;
+
+            &:hover, &:disabled {
+                color: getColor(7);
+                background: getColor(2);
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:disabled {
+                cursor: progress;
             }
         }
     }
