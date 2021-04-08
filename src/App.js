@@ -1,8 +1,9 @@
 import Map from './Components/Map';
+import Data from './Components/Data';
 import { useLocation } from './Components/Location'
 
 function App() {
-  const {location, setLocation} = useLocation(0, 0);
+  const {location, setLocation, coordinates} = useLocation(0, 0);
 
   return (
   <>
@@ -13,7 +14,7 @@ function App() {
       <Map location={location} setLocation={setLocation} />
     </div>
     <div className="data-visualizer">
-      Data Visualizer
+      <Data coordinates={coordinates} />
     </div>
   </>);
 }

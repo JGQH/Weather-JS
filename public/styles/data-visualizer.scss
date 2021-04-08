@@ -1,0 +1,27 @@
+@use './utilities' as *;
+
+.data-visualizer {
+    display: grid;
+    grid-template-areas:
+    "data data";
+
+    .data-coordinates {
+        grid-area: data;
+
+        padding: 1em;
+        border-radius: 1em;
+        background: getColor(3);
+
+        .coordinates {
+            text-align: center;
+            padding: 1em;
+            display: inline-block;
+
+            p {
+                background: getColor(4);
+                padding: .5em;
+                border-radius: .5em;
+            }
+        }
+    }
+}

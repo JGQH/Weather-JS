@@ -19,7 +19,12 @@ function useLocation(initialLatitude, initialLongitude) {
         setLongitude(lon);
     }
 
-    return {location, setLocation};
+    const coordinates = {
+        lat:Math.floor(scale(latitude, 0, 443, 90, -90) * 100)/100,
+        lon:Math.floor(scale(longitude, 0, 885, -180, 180) * 100)/100
+    }
+
+    return {location, setLocation, coordinates};
  }
 
  export { useLocation, scale }

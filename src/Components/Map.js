@@ -9,11 +9,12 @@ const Map = ({location, setLocation}) => {
     useEffect(() => {
         const ctx = canvas.current.getContext("2d");
         const img = new Image(709, 550);
-        img.src = worldMap;
+        
         img.onload = () => {
             ctx.drawImage(img, 0, 0);
             setMap(img)
         };
+        img.src = worldMap;
     }, [canvas]);
 
     function drawArea(x, y, drawWhite) {
@@ -25,16 +26,17 @@ const Map = ({location, setLocation}) => {
         ctx.lineTo(x - 25, y);
         ctx.moveTo(x, 0); //Top Line
         ctx.lineTo(x, y - 25);
-        ctx.moveTo(709, y); //Right Line
+        ctx.moveTo(885, y); //Right Line
         ctx.lineTo(x + 25, y);
-        ctx.moveTo(x, 550); //Bottom Line
+        ctx.moveTo(x, 443); //Bottom Line
         ctx.lineTo(x, y + 25);
+        ctx.rect(x - 1, y - 1, 2, 2)
         ctx.stroke();
     }
 
     function drawMap(evt) {
         const bounds = canvas.current.getBoundingClientRect();
-        const [x, y] = [scale(evt.clientX, bounds.left, bounds.right, 0, 709), scale(evt.clientY, bounds.top, bounds.bottom, 0, 550)];
+        const [x, y] = [scale(evt.clientX, bounds.left, bounds.right, 0, 885), scale(evt.clientY, bounds.top, bounds.bottom, 0, 443)];
 
         const ctx = canvas.current.getContext("2d");
         ctx.drawImage(map, 0, 0);
@@ -44,14 +46,14 @@ const Map = ({location, setLocation}) => {
 
     function setSelector(evt) {
         const bounds = canvas.current.getBoundingClientRect();
-        const [x, y] = [scale(evt.clientX, bounds.left, bounds.right, 0, 709), scale(evt.clientY, bounds.top, bounds.bottom, 0, 550)];
+        const [x, y] = [scale(evt.clientX, bounds.left, bounds.right, 0, 885), scale(evt.clientY, bounds.top, bounds.bottom, 0, 443)];
 
         setLocation(y, x);
     }
 
     return (
     <>
-        <canvas ref={canvas} width="709" height="550" onMouseMove={drawMap} onClick={setSelector} ></canvas>
+        <canvas ref={canvas} width="885" height="443" onMouseMove={drawMap} onClick={setSelector} ></canvas>
     </>);
 }
 
