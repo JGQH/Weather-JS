@@ -6,7 +6,7 @@ const Data = ({coordinates}) => {
 
     function getInfo() {
         setLoading(true);
-        fetch(`http://api.openweathermap.org/data/2.5/weather?units=metric&lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${process.env.REACT_APP_API}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${process.env.REACT_APP_API}`)
             .then(response => {
                 if(response.ok) {
                     response.json()
@@ -24,12 +24,12 @@ const Data = ({coordinates}) => {
                             setInfo(newInfo);
                         })                 
                 } else {
-                    alert("La conexión fue satisfactoria, pero ocurrió un error.");
+                    alert("Connection was successful, but there was an error.");
                 }
                 setLoading(false);
             })
             .catch(err => {
-                alert(`Hubo un problema realizando la búsqueda (Error: ${err.message})`);
+                alert(`There was a problem when fetching (Error: ${err.message}).`);
                 setLoading(false);
             })
     }
