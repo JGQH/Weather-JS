@@ -5,7 +5,6 @@
 
     .data-coordinates {
         padding: .5em;
-        margin: .5em;
         border-radius: .5em;
         background: getColor(3);
 
@@ -23,6 +22,7 @@
     }
 
     .data-searcher {
+        margin: 1em;
         text-align: center;
 
         button {
@@ -45,6 +45,35 @@
             &:disabled {
                 cursor: progress;
             }
+        }
+    }
+
+    .data-collection {
+        padding: .5em;
+        border: 2px solid getColor(8);
+        border-radius: .5em;
+
+        .collection {
+            padding: .5em;
+            border-bottom: 1px solid getColor(3);
+
+            .field, .value {
+                display: inline-block;
+                width: 50%;
+            }
+
+            .field {
+                text-align: left;
+                font-weight: bold;
+            }
+
+            .value {
+                text-align: right;
+            }
+        }
+
+        .collection:last-child {
+            border-bottom: none;
         }
     }
 }
