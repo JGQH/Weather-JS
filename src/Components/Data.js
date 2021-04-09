@@ -6,17 +6,32 @@ const Data = ({coordinates}) => {
 
     function getInfo() {
         setLoading(true);
-        setInfo({
-            "location": "Shuzenji (JP)", //Location
-            "weather": "scattered clouds",
-            "temperature": 11.49, // °C
-            "pressure": 1017, // hPa
-            "wind_speed": 0.89, // m/s
-            "cloudiness": 45, // %
-            "rain": undefined, // mm
-            "snow": undefined // mm
-        })
-        //setLoading(true);
+        fetch(`http://api.openweathermap.org/data/2.5/weather?units=metric&lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${process.env.REACT_APP_API}`)
+            .then(response => {
+                if(response.ok) {
+                    response.json()
+                        .then(val => {
+                            const newInfo = {
+                                "location": `${val.name} (${val.sys.country})`,
+                                "weather": val.weather[0].description,
+                                "temperature": val.main.temp,
+                                "pressure": val.main.pressure,
+                                "wind_speed": val.wind.speed,
+                                "cloudiness": val.clouds.all,
+                                "rain": val.rain && val.rain["3h"],
+                                "snow": val.snow && val.snow["3h"]
+                            };
+                            setInfo(newInfo);
+                        })                 
+                } else {
+                    alert("La conexión fue satisfactoria, pero ocurrió un error.");
+                }
+                setLoading(false);
+            })
+            .catch(err => {
+                alert(`Hubo un problema realizando la búsqueda (Error: ${err.message})`);
+                setLoading(false);
+            })
     }
 
     return (
@@ -57,7 +72,7 @@ const Data = ({coordinates}) => {
                 <div className="value">{info.wind_speed} ㎧</div>
             </div>
             <div className="collection">
-                <div className="field">Cloud Speed: </div>
+                <div className="field">Cloudiness: </div>
                 <div className="value">{info.cloudiness}%</div>
             </div>
             {info.rain && <div className="collection">

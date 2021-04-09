@@ -3,7 +3,7 @@ import Data from './Components/Data';
 import { useLocation } from './Components/Location'
 
 function App() {
-  const {location, setLocation, coordinates} = useLocation(0, 0);
+  const {location, setLocation, coordinates} = useLocation(221.5, 442.5);
 
   return (
   <>
