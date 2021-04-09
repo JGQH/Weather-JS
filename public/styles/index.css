@@ -1,0 +1,41 @@
+/* Palette "Winter Wonderland Palette", recovered from "https://lospec.com/palette-list/winter-wonderland" */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #20284e;
+}
+
+#weather-viewer {
+  min-width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(#d6e1e9, #ffffff);
+  text-align: center;
+}
+@media only screen and (min-width: 600px) {
+  #weather-viewer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: "title title" "map    data";
+  }
+  #weather-viewer .web-title {
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+  }
+  #weather-viewer .map-visualizer {
+    grid-area: map;
+    justify-self: center;
+    align-self: center;
+  }
+  #weather-viewer .data-visualizer {
+    grid-area: data;
+    justify-self: center;
+    align-self: center;
+  }
+}
+#weather-viewer .data-visualizer {
+  width: 75%;
+  margin: 0 auto;
+}/*# sourceMappingURL=index.css.map */

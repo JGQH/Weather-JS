@@ -1,0 +1,9 @@
+/* Palette "Winter Wonderland Palette", recovered from "https://lospec.com/palette-list/winter-wonderland" */
+.map-visualizer {
+  padding: 2em;
+}
+.map-visualizer canvas {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ffffff;
+}/*# sourceMappingURL=map-visualizer.css.map */

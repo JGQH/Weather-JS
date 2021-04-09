@@ -1,0 +1,64 @@
+/* Palette "Winter Wonderland Palette", recovered from "https://lospec.com/palette-list/winter-wonderland" */
+.data-visualizer {
+  display: grid;
+}
+.data-visualizer .data-coordinates {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background: #a7bcc9;
+}
+.data-visualizer .data-coordinates .coordinates {
+  text-align: center;
+  padding: 1em;
+  display: inline-block;
+}
+.data-visualizer .data-coordinates .coordinates p {
+  background: #738d9d;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+.data-visualizer .data-searcher {
+  margin: 1em;
+  text-align: center;
+}
+.data-visualizer .data-searcher button {
+  padding: 1em;
+  border-radius: 1em;
+  border: 2px solid #738d9d;
+  color: #d6e1e9;
+  background: #2c4a78;
+  transition: background 0.25s linear;
+}
+.data-visualizer .data-searcher button:hover, .data-visualizer .data-searcher button:disabled {
+  color: #2c4a78;
+  background: #d6e1e9;
+}
+.data-visualizer .data-searcher button:hover {
+  cursor: pointer;
+}
+.data-visualizer .data-searcher button:disabled {
+  cursor: progress;
+}
+.data-visualizer .data-collection {
+  padding: 0.5em;
+  border: 2px solid #20284e;
+  border-radius: 0.5em;
+}
+.data-visualizer .data-collection .collection {
+  padding: 0.5em;
+  border-bottom: 1px solid #a7bcc9;
+}
+.data-visualizer .data-collection .collection .field, .data-visualizer .data-collection .collection .value {
+  display: inline-block;
+  width: 50%;
+}
+.data-visualizer .data-collection .collection .field {
+  text-align: left;
+  font-weight: bold;
+}
+.data-visualizer .data-collection .collection .value {
+  text-align: right;
+}
+.data-visualizer .data-collection .collection:last-child {
+  border-bottom: none;
+}/*# sourceMappingURL=data-visualizer.css.map */
